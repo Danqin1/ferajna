@@ -2,21 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AppState
-{
-    Main,
-    Menu,
-    Contact,
-    Gallery
-}
-
-public class CameraController : MonoBehaviour
+public class CanvasController : MonoBehaviour
 {
     [SerializeField] private MainUIController mainUIController;
     [SerializeField] private AnimationCurve moveCurve;
-
-    private Animator animator;
-    private AppState state;
 
     void Start()
     {
