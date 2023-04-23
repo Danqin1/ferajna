@@ -17,7 +17,10 @@ public class CharacterController : MonoBehaviour
     private Animator animator;
 
     private int changeScreen = Animator.StringToHash("Change");
-    private int point = Animator.StringToHash("Point");
+    private int point = Animator.StringToHash("Pointing");
+    private int looking = Animator.StringToHash("Looking");
+    private int idle = Animator.StringToHash("Idle");
+    private int hello = Animator.StringToHash("Hello");
 
     void Start()
     {
@@ -37,7 +40,7 @@ public class CharacterController : MonoBehaviour
         switch (state)
         {
             case AppState.Main:
-                StartCoroutine(Change(mainStateRef, state));
+                OnAnimState(state);
                 break;
             case AppState.Menu:
                 StartCoroutine(Change(menuStateRef, state));
@@ -62,12 +65,15 @@ public class CharacterController : MonoBehaviour
         switch (state)
         {
             case AppState.Main:
+                animator.SetTrigger(hello);
                 break;
             case AppState.Menu:
+                animator.SetTrigger(point);
                 break;
             case AppState.Contact:
                 break;
             case AppState.Gallery:
+                animator.SetTrigger(looking);
                 break;
 
         }

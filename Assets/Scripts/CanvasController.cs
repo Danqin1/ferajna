@@ -6,6 +6,8 @@ public class CanvasController : MonoBehaviour
 {
     [SerializeField] private AppController controller;
     [SerializeField] private AnimationCurve moveCurve;
+    [SerializeField] private GameObject foodPanel;
+    [SerializeField] private GameObject welcomePanel;
 
     private void Awake()
     {
@@ -20,11 +22,15 @@ public class CanvasController : MonoBehaviour
     public void OnChangeState(AppState state)
     {
         StopAllCoroutines();
+        DisablePanels();
+
         switch (state)
         {
             case AppState.Main:
+                welcomePanel.SetActive(true);
                 break;
             case AppState.Menu:
+                foodPanel.SetActive(true);
                 break;
             case AppState.Contact:
                 break;
@@ -32,6 +38,12 @@ public class CanvasController : MonoBehaviour
                 break;
 
         }
+    }
+    
+    private void DisablePanels()
+    {
+        welcomePanel.SetActive(false);
+        foodPanel.SetActive(false);
     }
 
     private IEnumerator Rotate(Vector3 target)

@@ -20,6 +20,11 @@ public class AppController : MonoBehaviour
 
     private AppState state;
     // Start is called before the first frame update
+
+    private void Start()
+    {
+        ChangeState(0);
+    }
     public void ChangeState(int _state)
     {
         state = (AppState)_state;
