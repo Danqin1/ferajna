@@ -4,42 +4,31 @@ using UnityEngine;
 
 public class CanvasController : MonoBehaviour
 {
-    [SerializeField] private MainUIController mainUIController;
+    [SerializeField] private AppController controller;
     [SerializeField] private AnimationCurve moveCurve;
 
-    void Start()
+    private void Awake()
     {
-        mainUIController.OnMain.AddListener(() => ChangeState(AppState.Main));
-        mainUIController.OnMenu.AddListener(() => ChangeState(AppState.Menu));
-        mainUIController.OnGallery.AddListener(() => ChangeState(AppState.Gallery));
-        mainUIController.OnContact.AddListener(() => ChangeState(AppState.Contact));
+        controller.OnStateChange += OnChangeState;
     }
 
     private void OnDestroy()
     {
-        mainUIController.OnMain.RemoveAllListeners();
-        mainUIController.OnMenu.RemoveAllListeners();
-        mainUIController.OnGallery.RemoveAllListeners();
-        mainUIController.OnContact.RemoveAllListeners();
+        controller.OnStateChange -= OnChangeState;
     }
 
-    public void ChangeState(AppState state)
+    public void OnChangeState(AppState state)
     {
-        Debug.Log("New State:" + state);
         StopAllCoroutines();
         switch (state)
         {
             case AppState.Main:
-                StartCoroutine(Rotate(Vector3.forward));
                 break;
             case AppState.Menu:
-                StartCoroutine(Rotate(Vector3.right));
                 break;
             case AppState.Contact:
-                StartCoroutine(Rotate(Vector3.left));
                 break;
             case AppState.Gallery:
-                StartCoroutine(Rotate(Vector3.back));
                 break;
 
         }
