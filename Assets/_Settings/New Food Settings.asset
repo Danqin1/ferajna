@@ -1,0 +1,187 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c6e5503c28fee42a098b3960c67d1a, type: 3}
+  m_Name: New Food Settings
+  m_EditorClassIdentifier: 
+  pizzas:
+  - name: Margherita
+    description: sos pomidorowy, ser, oregano
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:26z\u0142 M:28z\u0142 L:36z\u0142"
+  - name: Funghi
+    description: sos pomidorowy, ser, pieczarki, oregano
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:28z\u0142 M:30z\u0142 L:39z\u0142"
+  - name: Quatro
+    description: sos pomidorowy, ser, pieczarki, szynka, oregano
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:29z\u0142 M:32z\u0142 L:41z\u0142"
+  - name: Vegetarian
+    description: "sos pomidorowy, ser, broku\u0142y, pomidor, og\xF3rek konserwowy,
+      kukurydza, cebula, oliwki, papryka, oregano"
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:30z\u0142 M:34z\u0142 L:41z\u0142"
+  - name: Hawai
+    description: sos pomidorowy, ser, kukurydza, ananas, szynka, oregano
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:30z\u0142 M:34z\u0142 L:41z\u0142"
+  - name: "Tu\u0144czyk"
+    description: "sos pomidorowy, ser, cebula, pomidor, tu\u0144czyk, oregano"
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:30z\u0142 M:34z\u0142 L:40z\u0142"
+  - name: "Broku\u0142owa"
+    description: "sos pomidorowy, ser, broku\u0142y, pomidor, szynka, oregano"
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:27z\u0142 M:31z\u0142 L:40z\u0142"
+  - name: Kebab
+    description: "sos \u015Bmietanowy, ser, pieczarki, cebula, kebab z kurczaka,
+      oregano"
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:30z\u0142 M:36z\u0142 L:42z\u0142"
+  - name: "Boczu\u015B"
+    description: sos pomidorowy, ser, pieczarki, cebula, papryka, boczek, oregano
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:32z\u0142 M:37z\u0142 L:45z\u0142"
+  - name: Ostra
+    description: sos pomidorowy, ser, cebula, pepperoni, salami, oregano
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:30z\u0142 M:35z\u0142 L:44z\u0142"
+  - name: Salami
+    description: sos pomidorowy, ser, cebula, salami, oregano
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:29z\u0142 M:33z\u0142 L:42z\u0142"
+  - name: "G\xF3ralska"
+    description: sos pomidorowy, ser, cebula, oscypek, boczek, oregano
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:32z\u0142 M:35z\u0142 L:45z\u0142"
+  - name: Szpinak
+    description: sos pomidorowy, ser, cebula, pomidor, szpinak, oregano
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:28z\u0142 M:33z\u0142 L:40z\u0142"
+  - name: Rukola
+    description: "sos pomidorowy, ser, rukola, pomidor, szynka parme\u0144ska, oregano"
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:32z\u0142 M:37z\u0142 L:45z\u0142"
+  - name: "Ch\u0142opska"
+    description: "sos pomidorowy, ser, pieczarki, cebula, kukurydza, boczek, kie\u0142basa,
+      oregano"
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:33z\u0142 M:37z\u0142 L:45z\u0142"
+  - name: Trio
+    description: sos pomidorowy, ser, cebula, papryka, szynka, boczek, salami, oregano
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:34z\u0142 M:38z\u0142 L:46z\u0142"
+  - name: Kurczak
+    description: sos pomidorowy, ser, cebula, papryka, kukurydza, kurczak, oregano
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:33z\u0142 M:37z\u0142 L:45z\u0142"
+  - name: Wiejska
+    description: "sos pomidorowy, ser, cebula, papryka, og\xF3rek konserwowy, kie\u0142basa,
+      oregano"
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:32z\u0142 M:36z\u0142 L:43z\u0142"
+  - name: Ferajna
+    description: sos pomidorowy, ser, cebula, papryka, kukurydza, oliwki, szynka,
+      salami, oregano
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:33z\u0142 M:37z\u0142 L:47z\u0142"
+  - name: "Na \u017Cyczenie"
+    description: "sos pomidorowy, ser, oregano, + 6 sk\u0142adnik\xF3w"
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "S:35z\u0142 M:41z\u0142 L:49z\u0142"
+  - name: "\"Kubu\u015B\" 16cm"
+    description: sos pomidorowy, ser, szynka
+    sprite: {fileID: 21300000, guid: e6b56f9ffbb68e6409a79e1a626a6bb2, type: 3}
+    price: "15z\u0142"
+  sandwiches:
+  - name: Do syta
+    description: sos, ser, papryka, kukurydza, boczek, kurczak, salami, przyprawy
+    sprite: {fileID: 0}
+    price: "12z\u0142"
+  - name: "G\xF3ralska"
+    description: sos, ser, cebula, boczek, salami, oscypek, przyprawy
+    sprite: {fileID: 0}
+    price: "12z\u0142"
+  - name: "Pi\u0105tkowa"
+    description: "sos, ser, cebula, papryka, kukurydza, pomidor, og\xF3rek, przyprawy"
+    sprite: {fileID: 0}
+    price: "12z\u0142"
+  - name: "Z tu\u0144czykiem"
+    description: "sos, ser, cebula, kukurydza, oliwki, pomidor, tu\u0144czyk, przyprawy"
+    sprite: {fileID: 0}
+    price: "12z\u0142"
+  snacks:
+  - name: Frytki
+    description: 
+    sprite: {fileID: 0}
+    price: "8z\u0142"
+  - name: Frytki z serem
+    description: 
+    sprite: {fileID: 0}
+    price: "10z\u0142"
+  - name: "Frytki \u0142\xF3deczki"
+    description: 
+    sprite: {fileID: 0}
+    price: "10z\u0142"
+  - name: Hamburger
+    description: 
+    sprite: {fileID: 0}
+    price: "11z\u0142"
+  - name: Cheeseburger
+    description: 
+    sprite: {fileID: 0}
+    price: "13z\u0142"
+  - name: Stripsy
+    description: 5 szt. + sos
+    sprite: {fileID: 0}
+    price: "15z\u0142"
+  - name: "Skrzyde\u0142ka"
+    description: 20 szt. + sos
+    sprite: {fileID: 0}
+    price: "30z\u0142"
+  - name: Kebab tortilla
+    description: 
+    sprite: {fileID: 0}
+    price: "17z\u0142"
+  sets:
+  - name: Zestaw stripsy
+    description: "sos, sur\xF3wka, frytki, stripsy 5 sztuk"
+    sprite: {fileID: 0}
+    price: "24z\u0142"
+  - name: "Zestaw skrzyde\u0142ka"
+    description: "sos, sur\xF3wka, frytki, skrzyde\u0142ka 10 sztuk"
+    sprite: {fileID: 0}
+    price: "24z\u0142"
+  - name: Zestaw kebab
+    description: "sos, sur\xF3wka, frytki, kebab z kurczaka"
+    sprite: {fileID: 0}
+    price: "24z\u0142"
+  - name: Dla dzieci
+    description: Nuggetsy drobiowe z frytkami + sok
+    sprite: {fileID: 0}
+    price: "15z\u0142"
+  salats:
+  - name: Z kurczakiem
+    description: "sa\u0142ata, cebula, og\xF3rek, pomidor, kurczak, grzanki, sos
+      cezar"
+    sprite: {fileID: 0}
+    price: "25z\u0142"
+  - name: "Z tu\u0144czykiem"
+    description: "sa\u0142ata, cebula, pomidor, kukurydza, oliwki, tu\u0144czyk,
+      sos vinegrette"
+    sprite: {fileID: 0}
+    price: "23z\u0142"
+  - name: Grecka
+    description: "sa\u0142ata, cebula, pomidor, ser feta, og\xF3rek, papryka, oliwki,
+      sos vinegrette"
+    sprite: {fileID: 0}
+    price: "21z\u0142"

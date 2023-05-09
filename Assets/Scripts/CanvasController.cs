@@ -4,61 +4,96 @@ using UnityEngine;
 
 public class CanvasController : MonoBehaviour
 {
-    [SerializeField] private AppController controller;
     [SerializeField] private AnimationCurve moveCurve;
     [SerializeField] private GameObject foodPanel;
     [SerializeField] private GameObject welcomePanel;
+    [SerializeField] private GameObject contactPanel;
+    [SerializeField] private GameObject galleryPanel;
+    [SerializeField] private GameObject mainPanel;
+    [SerializeField] private float lerpSpeed = 0.05f;
+
+    GameObject currentPanel;
 
     private void Awake()
     {
-        controller.OnStateChange += OnChangeState;
+        AppController.Instance.OnStateChange += OnChangeState;
+        welcomePanel.SetActive(true);
+        currentPanel = welcomePanel;
     }
 
-    private void OnDestroy()
+    public void OnStart()
     {
-        controller.OnStateChange -= OnChangeState;
+        AppController.Instance.ChangeState(AppState.Main);
     }
 
     public void OnChangeState(AppState state)
     {
         StopAllCoroutines();
-        DisablePanels();
+
+        StartCoroutine(FadeOut(currentPanel));
 
         switch (state)
         {
+            case AppState.Welcome:
+                currentPanel = welcomePanel;
+                break;
             case AppState.Main:
-                welcomePanel.SetActive(true);
+                currentPanel = mainPanel;
                 break;
             case AppState.Menu:
-                foodPanel.SetActive(true);
+                currentPanel = foodPanel;
                 break;
             case AppState.Contact:
+                currentPanel = contactPanel;
                 break;
             case AppState.Gallery:
+                currentPanel = galleryPanel;
                 break;
 
         }
-    }
-    
-    private void DisablePanels()
-    {
-        welcomePanel.SetActive(false);
-        foodPanel.SetActive(false);
+
+        StartCoroutine(FadeIn(currentPanel));
     }
 
-    private IEnumerator Rotate(Vector3 target)
+    private IEnumerator FadeOut(GameObject panel)
     {
-        Quaternion startRot = transform.rotation;
+        if (!panel.activeSelf) yield break;
 
-        Quaternion targetRot = Quaternion.LookRotation(target, Vector3.up);
+        var renderer = panel.GetComponent<CanvasGroup>();
+        renderer.interactable = false;
+
+        float lerp = 1;
+        while (lerp > 0)
+        {
+            renderer.alpha = lerp;
+            lerp -= lerpSpeed;
+            yield return null;
+        }
+
+        renderer.alpha = 0;
+        renderer.blocksRaycasts = false;
+        panel.SetActive(false);
+
+        yield return null;
+    }
+
+    private IEnumerator FadeIn(GameObject panel)
+    {
+        var renderer = panel.GetComponent<CanvasGroup>();
+        renderer.interactable = false;
+        panel.SetActive(true);
 
         float lerp = 0;
         while (lerp < 1)
         {
-            transform.rotation = Quaternion.Slerp(startRot, targetRot, moveCurve.Evaluate(lerp));
-            lerp += .001f;
+            renderer.alpha = lerp;
+            lerp += lerpSpeed;
             yield return null;
         }
+
+        renderer.alpha = 1;
+        renderer.interactable = true;
+        renderer.blocksRaycasts = true;
 
         yield return null;
     }
