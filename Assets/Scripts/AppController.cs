@@ -33,7 +33,7 @@ public class AppController : MonoBehaviour
     private void Awake()
     {
         mInstance = this;
-        Application.targetFrameRate = 60;
+        //Application.targetFrameRate = 60;
     }
 
     private void Start()
