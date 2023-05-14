@@ -425,7 +425,7 @@ MonoBehaviour:
   m_Elasticity: 0.02
   m_Inertia: 1
   m_DecelerationRate: 0.01
-  m_ScrollSensitivity: -50
+  m_ScrollSensitivity: -100
   m_Viewport: {fileID: 195024123}
   m_HorizontalScrollbar: {fileID: 759803957}
   m_VerticalScrollbar: {fileID: 641230820}
@@ -906,7 +906,7 @@ MonoBehaviour:
   autoSetup: 0
   mainUI: {fileID: 1741594526}
   scrollbar: {fileID: 902692963}
-  lerpSpeed: 1
+  lerpSpeed: 2
   scrollSpeed: 0.01
   cardWidth: 400
   panels:
@@ -2264,7 +2264,7 @@ MonoBehaviour:
   m_Elasticity: 0.02
   m_Inertia: 1
   m_DecelerationRate: 0.01
-  m_ScrollSensitivity: -50
+  m_ScrollSensitivity: -100
   m_Viewport: {fileID: 295448132}
   m_HorizontalScrollbar: {fileID: 1591923336}
   m_VerticalScrollbar: {fileID: 519853303}
@@ -2443,7 +2443,7 @@ MonoBehaviour:
   autoSetup: 1
   mainUI: {fileID: 1741594526}
   scrollbar: {fileID: 1727667278}
-  lerpSpeed: 1
+  lerpSpeed: 2
   scrollSpeed: 0.01
   cardWidth: 400
   panels:
@@ -3632,7 +3632,7 @@ MonoBehaviour:
   m_Elasticity: 0.02
   m_Inertia: 1
   m_DecelerationRate: 0.01
-  m_ScrollSensitivity: -50
+  m_ScrollSensitivity: -100
   m_Viewport: {fileID: 1995648338}
   m_HorizontalScrollbar: {fileID: 763151550}
   m_VerticalScrollbar: {fileID: 881818059}
@@ -4987,7 +4987,7 @@ MonoBehaviour:
   m_Elasticity: 0.02
   m_Inertia: 1
   m_DecelerationRate: 0.01
-  m_ScrollSensitivity: -50
+  m_ScrollSensitivity: -100
   m_Viewport: {fileID: 1557349847}
   m_HorizontalScrollbar: {fileID: 342421501}
   m_VerticalScrollbar: {fileID: 65559878}
@@ -5532,7 +5532,7 @@ MonoBehaviour:
   autoSetup: 0
   mainUI: {fileID: 1741594526}
   scrollbar: {fileID: 763151550}
-  lerpSpeed: 1
+  lerpSpeed: 2
   scrollSpeed: 0.01
   cardWidth: 400
   panels: []
@@ -7593,7 +7593,7 @@ MonoBehaviour:
   m_Elasticity: 0.02
   m_Inertia: 1
   m_DecelerationRate: 0.01
-  m_ScrollSensitivity: -50
+  m_ScrollSensitivity: -100
   m_Viewport: {fileID: 2079302680}
   m_HorizontalScrollbar: {fileID: 902692963}
   m_VerticalScrollbar: {fileID: 1057883477}
@@ -7873,7 +7873,7 @@ MonoBehaviour:
   m_Elasticity: 0.02
   m_Inertia: 1
   m_DecelerationRate: 0.01
-  m_ScrollSensitivity: -50
+  m_ScrollSensitivity: -100
   m_Viewport: {fileID: 994491124}
   m_HorizontalScrollbar: {fileID: 2064150048}
   m_VerticalScrollbar: {fileID: 750233310}
@@ -7990,7 +7990,7 @@ MonoBehaviour:
   autoSetup: 1
   mainUI: {fileID: 1741594526}
   scrollbar: {fileID: 1591923336}
-  lerpSpeed: 1
+  lerpSpeed: 2
   scrollSpeed: 0.01
   cardWidth: 400
   panels:
@@ -8362,7 +8362,7 @@ MonoBehaviour:
   m_Elasticity: 0.02
   m_Inertia: 1
   m_DecelerationRate: 0.01
-  m_ScrollSensitivity: -50
+  m_ScrollSensitivity: -100
   m_Viewport: {fileID: 510858909}
   m_HorizontalScrollbar: {fileID: 1727667278}
   m_VerticalScrollbar: {fileID: 1079573362}
@@ -8815,7 +8815,7 @@ MonoBehaviour:
   autoSetup: 0
   mainUI: {fileID: 1741594526}
   scrollbar: {fileID: 759803957}
-  lerpSpeed: 1
+  lerpSpeed: 2
   scrollSpeed: 0.01
   cardWidth: 400
   panels: []
@@ -9156,7 +9156,7 @@ MonoBehaviour:
   m_Elasticity: 0.02
   m_Inertia: 1
   m_DecelerationRate: 0.01
-  m_ScrollSensitivity: -50
+  m_ScrollSensitivity: -100
   m_Viewport: {fileID: 599376597}
   m_HorizontalScrollbar: {fileID: 549160366}
   m_VerticalScrollbar: {fileID: 1329141863}
@@ -10223,7 +10223,7 @@ MonoBehaviour:
   m_Elasticity: 0.02
   m_Inertia: 1
   m_DecelerationRate: 0.01
-  m_ScrollSensitivity: -50
+  m_ScrollSensitivity: -100
   m_Viewport: {fileID: 577731476}
   m_HorizontalScrollbar: {fileID: 1536565489}
   m_VerticalScrollbar: {fileID: 1429557156}
@@ -11333,7 +11333,7 @@ MonoBehaviour:
   autoSetup: 0
   mainUI: {fileID: 1741594526}
   scrollbar: {fileID: 342421501}
-  lerpSpeed: 1
+  lerpSpeed: 2
   scrollSpeed: 0.01
   cardWidth: 400
   panels: []
@@ -12577,7 +12577,7 @@ MonoBehaviour:
   autoSetup: 0
   mainUI: {fileID: 1741594526}
   scrollbar: {fileID: 1536565489}
-  lerpSpeed: 1
+  lerpSpeed: 2
   scrollSpeed: 0.01
   cardWidth: 400
   panels: []
@@ -13157,7 +13157,7 @@ MonoBehaviour:
   autoSetup: 1
   mainUI: {fileID: 1741594526}
   scrollbar: {fileID: 2064150048}
-  lerpSpeed: 1
+  lerpSpeed: 2
   scrollSpeed: 0.01
   cardWidth: 400
   panels:
@@ -13826,7 +13826,7 @@ MonoBehaviour:
   autoSetup: 1
   mainUI: {fileID: 1741594526}
   scrollbar: {fileID: 549160366}
-  lerpSpeed: 1
+  lerpSpeed: 2
   scrollSpeed: 0.01
   cardWidth: 400
   panels:
