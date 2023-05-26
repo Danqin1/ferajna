@@ -4,26 +4,66 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | ferajnaUnity</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
   </head>
-  <body style="text-align: center; width: 100%; height: 100%; margin: 0%; display: flex; min-height: 100vh; aspect-ratio: auto;">
-    <canvas id="unity-canvas"  style="width: 100%; height: 100%; background: #231F20;" >
-    <script src="Build/ad47929a7108fb80f5d75d5b9dbeda1c.js"></script>
+  <body>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas"></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+    </div>
     <script>
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/b39045c52a03f48ad42207aa364bc906.data",
-        frameworkUrl: "Build/41367998f17d98a433eb3e9dd6a751ac.js",
-        codeUrl: "Build/5072b20bdd34df9d58f687723ef4961a.wasm",
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/ad47929a7108fb80f5d75d5b9dbeda1c.js";
+      var config = {
+        dataUrl: buildUrl + "/1519bbefc831539a32ac7031cd19a5be.data.br",
+        frameworkUrl: buildUrl + "/41367998f17d98a433eb3e9dd6a751ac.js.br",
+        codeUrl: buildUrl + "/237a54e155f9a58579e557b11e672951.wasm.br",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "PDQ",
         productName: "ferajnaUnity",
         productVersion: "0.1",
-        //matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      });
+      };
 
-      htmlCanvas = document.getElementById('unity-canvas')
-      htmlCanvas.width = window.innerWidth;
-      htmlCanvas.height = window.innerHeight;
+      // By default Unity keeps WebGL canvas render target size matched with
+      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+      // Set this to false if you want to decouple this synchronization from
+      // happening inside the engine, and you would instead like to size up
+      // the canvas DOM size and WebGL render target sizes yourself.
+      // config.matchWebGLToCanvasSize = false;
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        // Avoid draining fillrate performance on mobile devices,
+        // and default/override low DPI mode on mobile browsers.
+        config.devicePixelRatio = 1;
+      } else {
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+      }
+      loadingBar.style.display = "block";
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          progressBarFull.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+          loadingBar.style.display = "none";
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
     </script>
   </body>
 </html>
