@@ -1,69 +1,560 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | ferajnaUnity</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-    </div>
-    <script>
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pizzeria Ferajna</title>
 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/192fc75b57eb04a1d9e05d36b014d405.js";
-      var config = {
-        dataUrl: buildUrl + "/df829667e732749d34eb08318bd901c9.data.unityweb",
-        frameworkUrl: buildUrl + "/41367998f17d98a433eb3e9dd6a751ac.js.unityweb",
-        codeUrl: buildUrl + "/237a54e155f9a58579e557b11e672951.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "PDQ",
-        productName: "ferajnaUnity",
-        productVersion: "0.1",
-      };
+	<link rel="stylesheet" href="css/style.css">
 
-      // By default Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        container.className = "unity-mobile";
-        // Avoid draining fillrate performance on mobile devices,
-        // and default/override low DPI mode on mobile browsers.
-        config.devicePixelRatio = 1;
-      } else {
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
-      }
-      loadingBar.style.display = "block";
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
-    </script>
-  </body>
+	<!-- header section -->
+	<header>
+		<!-- <a href="#" class="logo">Food<span>Fun</span></a> -->
+		<a href="#" class="logo"><img src="img/logo.png" alt="logo" width="200px" height="100px"></a>
+		<ul class="navbar">
+			<li><a href="#home">Stona główna</a></li>
+			<li><a href="#about">O nas</a></li>
+			<li><a href="#menu">Menu</a></li>
+			<li><a href="#contact">Kontakt</a></li>
+		</ul>
+
+		<div class="h-icons">
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+	</header>
+
+	<!-- home section -->
+		<section class="home" id="home">
+			<div class="home-text">
+				<h1><span>Pizzeria Ferajna</span> zaprasza na Pyszną i Świeżą Pizzę</h1>
+				<p>W naszej ofercie również zestawy obiadowe,<br> kanapki grillowe, sałatki i przekąski.</p>
+				<a href="#contact" class="btn">Zamów już Teraz!</a>
+			</div>
+
+			<div class="home-img">
+				<img src="img/home.png" alt="home">
+			</div>
+		</section>
+
+	<!-- about section -->
+		<section class="about" id="about">
+			<div class="about-img">
+				<img src="img/a.png" alt="">
+			</div>
+
+			<div class="about-text">
+				<h2>Pyszne Jedzenie<br> Dla Każdego!</h2>
+				<p>Szeroki wybór dań wpasuje się w gust każdego klienta. 
+                    <br> Znajdziecie u nas świeże składniki przygotowywane z najwyższą starannością.
+                </p>
+				<a href="#menu" class="btn">Zjedzmy coś!</a>
+			</div>
+
+		</section>
+
+	<!-- menu section -->
+		<section class="menu" id="menu">
+            <div class="main-text">
+				<h2>Różne Rozmiary Pizzy!</h2>
+                <h3>S - 32 cm, M - 36 cm, L - 45 cm</h3>
+                <p><br><br></p>
+			</div>
+
+			<div class="main-text">
+				<h2>Nasze Hity!</h2>
+			</div>
+
+			<div class="menu-content">
+				<div class="row">
+					<img src="img/quatro.png" alt="main-product1">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Ferajna</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 33zł M: 37zł L: 47zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, cebula, papryka, kukurydza, kurczak, oregano</p>
+				</div>
+
+				<div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Na życzenie</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 35zł M: 41zł L: 49zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, oregano + 6 dowolnych składników </p>
+				</div>
+
+				<div class="row">
+					<img src="img/quatro.png" alt="main-product3">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Quatro</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 29zł M: 32zł L: 41zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, pieczarki, szynka, oregano</p>
+				</div>
+
+				<div class="row">
+					<img src="img/quatro.png" alt="main-product4">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Boczuś</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 32zł M: 37zł L: 45zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, pieczarki, cebula, papryka, boczek, oregano</p>
+				</div>
+			</div>
+
+            <div class="main-text">
+				<h2>Coś dla wegetarian!</h2>
+			</div>
+
+			<div class="menu-content">
+				<div class="row">
+					<img src="img/quatro.png" alt="main-product1">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Vegetarian</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 30zł M: 34zł L: 41zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, brokuły, pomidor, ogórek konserwowy, kukurydza, cebula, oliwki, papryka, oregano</p>
+				</div>
+
+				<div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Szpinak</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 28zł M: 33zł L: 40zł</h5>
+						</div>
+					</div>
+					<p>sos śmietanowy, ser, cebula, pomidor, szpinak, oregano </p>
+				</div>
+
+                <div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Sałatka Grecka</h4>
+						</div>
+						<div class="menu-right">
+							<h5>21zł</h5>
+						</div>
+					</div>
+					<p>sałata, cebula, pomidor, ser feta, obórek, papryka, oliwki, sos vinegrette</p>
+				</div>
+
+                <div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Kanapka Grilowa Piątkowa</h4>
+						</div>
+						<div class="menu-right">
+							<h5>12zł</h5>
+						</div>
+					</div>
+					<p>sos, ser, cebula, kukurydza, oliwki, pomidor, tuńczyk, przyprawy</p>
+				</div>
+			</div>
+
+            <div class="main-text">
+				<h2>Również świetne wybory!</h2>
+			</div>
+
+			<div class="menu-content">
+				<div class="row">
+					<img src="img/quatro.png" alt="main-product1">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Margarita</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 26zł M: 28zł L: 36zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, oregano</p>
+				</div>
+
+				<div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Funghi</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 28zł M: 30zł L: 39zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, pieczarki, oregano </p>
+				</div>
+                <div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Hawai</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 30zł M: 34zł L: 41zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, kukurydza, ananas, szynka, oregano </p>
+				</div>
+                <div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Tuńczyk</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 30zł M: 34zł L: 40zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, cebula, pomidor, tuńczyk, oregano </p>
+				</div>
+                <div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Brokułowa</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 27zł M: 31zł L: 40zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, brokuły, pomidor, szynka, oregano </p>
+				</div>
+                <div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Kebab</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 30zł M: 36zł L: 42zł</h5>
+						</div>
+					</div>
+					<p>sos śmietanowy, ser, pieczarki, cebula, kebab z kurczaka, oregano </p>
+				</div>
+                <div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Ostra</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 30zł M: 35zł L: 44zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, peperoni, salami, cebula, oregano </p>
+				</div>
+                <div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Salami</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 29zł M: 33zł L: 42zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, cebula, salami, oregano </p>
+				</div>
+                <div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Rukola</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 32zł M: 37zł L: 45zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, rukola, pomidor, szynka parmeńska, oregano </p>
+				</div>
+                <div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Rukola</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 32zł M: 37zł L: 45zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, rukola, pomidor, szynka parmeńska, oregano </p>
+				</div>
+                <div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Chłopska</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 33zł M: 37zł L: 45zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, pieczarki, cebula, kukurydza, boczek, kiełbasa, oregano </p>
+				</div>
+                <div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Trio</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 34zł M: 38zł L: 46zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, cebula, papryka, szynka, boczek, salami, oregano </p>
+				</div>
+                <div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Kurczak</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 33zł M: 37zł L: 45zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, cebula, papryka, kukurydza, kurczak, oregano </p>
+				</div>
+                <div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Wiejska</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 32zł M: 36zł L: 43zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, cebula, papryka, ogórek konserwowy, kiełbasa, oregano </p>
+				</div>
+                <div class="row">
+					<img src="img/quatro.png" alt="main-product2">
+					<div class="menu-text">
+						<div class="menu-left">
+							<h4>Góralska</h4>
+						</div>
+						<div class="menu-right">
+							<h5>S: 32zł M: 35zł L: 45zł</h5>
+						</div>
+					</div>
+					<p>sos pomidorowy, ser, pieczarki, oregano </p>
+				</div>
+			</div>
+
+            <div class="main-text">
+				<h2>Zestawy obiadowe!</h2>
+			</div>
+            <div class="snacks">
+                <div class="menu-text">
+                    <div class="menu-left">
+                        <h4>Zestaw Stripsy</h4>
+                    </div>
+                    <div class="menu-right">
+                        <h5>24zł</h5>
+                    </div>
+                </div>
+                <p>sos, surówka, frytki, stripsy 5 sztuk</p>
+                <div class="menu-text">
+                    <div class="menu-left">
+                        <h4>Zestaw Skrzydełka</h4>
+                    </div>
+                    <div class="menu-right">
+                        <h5>24zł</h5>
+                    </div>
+                </div>
+                <p>sos, surówka, frytki, skrzydełka 10 sztuk</p>
+                <div class="menu-text">
+                    <div class="menu-left">
+                        <h4>Zestaw Kebab</h4>
+                    </div>
+                    <div class="menu-right">
+                        <h5>24zł</h5>
+                    </div>
+                </div>
+                <p>sos, surówka, frytki, kebab z kurczaka</p>
+            </div>
+
+            <div class="main-text">
+				<h2>Przekąski!</h2>
+			</div>
+            <div class="snacks">
+                <div class="menu-text">
+                    <div class="menu-left">
+                        <h4>Frytki</h4>
+                    </div>
+                    <div class="menu-right">
+                        <h5>8zł</h5>
+                    </div>
+                </div>
+                <div class="menu-text">
+                    <div class="menu-left">
+                        <h4>Frytki z serem</h4>
+                    </div>
+                    <div class="menu-right">
+                        <h5>10zł</h5>
+                    </div>
+                </div>
+                <div class="menu-text">
+                    <div class="menu-left">
+                        <h4>Frytki łódeczki</h4>
+                    </div>
+                    <div class="menu-right">
+                        <h5>10zł</h5>
+                    </div>
+                </div>
+                <div class="menu-text">
+                    <div class="menu-left">
+                        <h4>Hamburger</h4>
+                    </div>
+                    <div class="menu-right">
+                        <h5>11zł</h5>
+                    </div>
+                </div>
+                <div class="menu-text">
+                    <div class="menu-left">
+                        <h4>Cheeseburger</h4>
+                    </div>
+                    <div class="menu-right">
+                        <h5>13zł</h5>
+                    </div>
+                </div>
+                <div class="menu-text">
+                    <div class="menu-left">
+                        <h4>Stripsy (5 szt + sos)</h4>
+                    </div>
+                    <div class="menu-right">
+                        <h5>15zł</h5>
+                    </div>
+                </div>
+                <div class="menu-text">
+                    <div class="menu-left">
+                        <h4>Skrzydełka (20 szt + sos)</h4>
+                    </div>
+                    <div class="menu-right">
+                        <h5>30zł</h5>
+                    </div>
+                </div>
+                <div class="menu-text">
+                    <div class="menu-left">
+                        <h4>Kebab tortilla</h4>
+                    </div>
+                    <div class="menu-right">
+                        <h5>17zł</h5>
+                    </div>
+                </div>
+                <div class="menu-text">
+                    <div class="menu-left">
+                        <h4>Kanapka Grilowa Do Syta</h4>
+                    </div>
+                    <div class="menu-right">
+                        <h5>12zł</h5>
+                    </div>
+                </div>
+                <p>sos, ser, papryka, kukurydza, boczek, kurczak, salami, przyprawy</p>
+
+                <div class="menu-text">
+                    <div class="menu-left">
+                        <h4>Kanapka Grilowa Góralska</h4>
+                    </div>
+                    <div class="menu-right">
+                        <h5>12zł</h5>
+                    </div>
+                </div>
+                <p>sos, ser, cebula, boczek, salami, oscypek, przyprawy</p>
+                <div class="menu-text">
+                    <div class="menu-left">
+                        <h4>Kanapka Grilowa z Tuńczykiem</h4>
+                    </div>
+                    <div class="menu-right">
+                        <h5>12zł</h5>
+                    </div>
+                </div>
+                <p>sos, ser, cebula, kukurydza, oliwki, pomidor, tuńczyk, przyprawy</p>
+                <div class="menu-text">
+                    <div class="menu-left">
+                        <h4>Sałatka z Kurczakiem</h4>
+                    </div>
+                    <div class="menu-right">
+                        <h5>25zł</h5>
+                    </div>
+                </div>
+                <p>sałata, cebula, ogórek, pomidor, kurczak, grzanki, sos cezar</p>
+                <div class="menu-text">
+                    <div class="menu-left">
+                        <h4>Sałatka z Tuńczykiem</h4>
+                    </div>
+                    <div class="menu-right">
+                        <h5>25zł</h5>
+                    </div>
+                </div>
+                <p>sałata, cebula, ogórek, pomidor, kukurydza, oliwki, tuńczyk, sos vinegrette</p>
+            </div>
+		</section>
+
+	<!-- contact section -->
+
+		<section class="contact" id="contact">
+			<div class="main-contact">
+				<div class="contact-content">
+					<h2>Kontakt</h2>
+                    <h3><label for="phone">18 27 50 568</label></h3>
+					<li><a href="#home"><i class='bx bxl-facebook-square' ></i></a></li>
+                    <p>Gorczańska 5 <br>34-436 Maniowy</p>
+                    <img src="img/map.png" alt="map">
+				</div>
+			</div>
+		</section>
+
+		<div class="last-text">
+			<p>© Developed 2023 by Piotr Dang Quoc</p>
+		</div>
+
+	<!-- scroll top -->
+	<a href="#home" class="scroll-top">
+		<i class='bx bx-up-arrow-alt' ></i>
+	</a>
+
+	<!-- custom scrollreveal link -->
+
+	<script src="https://unpkg.com/scrollreveal"></script>
+	
+	<!-- custom js link -->
+	<script type="text/javascript" src="js/index.js"></script>
+	
+</body>
 </html>
+
+
+
